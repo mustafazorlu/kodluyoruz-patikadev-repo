@@ -2,10 +2,17 @@ import Header from "./components/Header";
 import "./App.css";
 import PropTypes from "prop-types";
 import User from "./components/User";
+import { useState } from "react";
+import Counter from "./components/Counter";
+import InputExample from "./components/InputExample";
 
 function App() {
-    const name = "Mustafa";
+    // const name = "Mustafa";
     const name2 = "Habibe";
+
+    const [array, setArray] = useState(["elma", "karpuz"]);
+    const [name, setName] = useState("Mustafa");
+    const [address, setAddress] = useState([{ title: "İzmir", zip: "1234" }]);
 
     const users = [
         {
@@ -35,10 +42,32 @@ function App() {
             </label>
             <p>{name + "❤️" + name2}</p>
             <User users={users} adress={{ title: "adress", zip: 12 }} />
+            {array.map((item) => (
+                <span>{item}</span>
+            ))}
+            <button onClick={() => setArray([...array, "muz"])}>ekle</button>
+
+            <div>
+                {address.map((item) => (
+                    <div>
+                        <span>{item.title}</span>
+                        <span>{item.zip}</span>
+                    </div>
+                ))}
+            </div>
+            <button
+                onClick={() =>
+                    setAddress([...address, { title: "Eskişehir", zip: 1234 }])
+                }
+            >
+                adres ekle
+            </button>
+
+            <Counter/>
+
+            <InputExample/>
         </>
     );
 }
-
-
 
 export default App;
