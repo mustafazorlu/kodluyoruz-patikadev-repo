@@ -5,32 +5,37 @@ import User from "./components/User";
 import { useState } from "react";
 import Counter from "./components/Counter";
 import InputExample from "./components/InputExample";
+import { useEffect } from "react";
 
 function App() {
+    const [isVisible, setIsVisible] = useState(true);
     // const name = "Mustafa";
-    const name2 = "Habibe";
+    // const name2 = "Habibe";
 
-    const [array, setArray] = useState(["elma", "karpuz"]);
-    const [name, setName] = useState("Mustafa");
-    const [address, setAddress] = useState([{ title: "İzmir", zip: "1234" }]);
+    // const [array, setArray] = useState(["elma", "karpuz"]);
+    // const [name, setName] = useState("Mustafa");
+    // const [address, setAddress] = useState([{ title: "İzmir", zip: "1234" }]);
 
-    const users = [
-        {
-            name: "Mustafa",
-            surname: "Zorlu",
-            age: 23,
-            isLoggedIn: true,
-        },
-        {
-            name: "Habibe",
-            surname: "Zorlu",
-            age: 23,
-            isLoggedIn: true,
-        },
-    ];
+    // useEffect(() => {
+    //     console.log('adres değişti')
+    // },[address])
+    // const users = [
+    //     {
+    //         name: "Mustafa",
+    //         surname: "Zorlu",
+    //         age: 23,
+    //         isLoggedIn: true,
+    //     },
+    //     {
+    //         name: "Habibe",
+    //         surname: "Zorlu",
+    //         age: 23,
+    //         isLoggedIn: true,
+    //     },
+    // ];
     return (
         <>
-            <Header />
+            {/* <Header />
             <p className="xyz">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptatum odio ex, ut corporis tempore est et in temporibus
@@ -61,11 +66,11 @@ function App() {
                 }
             >
                 adres ekle
-            </button>
+            </button> */}
 
-            <Counter/>
-
-            <InputExample/>
+            {isVisible && <Counter />}
+            <button onClick={() => setIsVisible(!isVisible)}>kaldır</button>
+            {/* <InputExample/> */}
         </>
     );
 }
