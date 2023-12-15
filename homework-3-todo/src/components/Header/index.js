@@ -6,9 +6,13 @@ import { CiCirclePlus } from "react-icons/ci";
 const Header = ({ addTask }) => {
     const [title, setTitle] = useState("");
     const handleSubmit = (e) => {
+        //form submit olayını kaldırması için
         e.preventDefault();
+        //ici boşsa eklemesine izin vermemesi için durduruyoruz
         if (!title) return;
+        //task ekliyoruz
         addTask(title);
+        //title inputunu içini boşaltıyoruz
         setTitle("");
     };
     const onChangeTitle = (e) => {
