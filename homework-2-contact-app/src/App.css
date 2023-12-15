@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --main-color: #eee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    outline: none;
+    font-family: 'Outfit', sans-serif;
+}
+
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    padding: 1rem;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--main-color);
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+.add-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+
+.input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 16px;
+    border: none;
+}
+
+.add-input {
+    flex: 1
+}
+
+.input:focus {
+    box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0);
+}
+
+.list {
+    padding: 1rem;
+
+}
+
+.btn {
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item{
+    padding: 0.5rem 0;
+}

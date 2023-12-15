@@ -6,6 +6,8 @@ const initialValues = { fullname: "", phone_number: "" };
 const Form = ({ setContacts, contacts }) => {
     const [form, setForm] = useState(initialValues);
 
+    console.log(form)
+
     useEffect(() => {
         clearInput();
     }, [contacts]);
