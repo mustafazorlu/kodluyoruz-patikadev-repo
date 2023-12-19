@@ -1,11 +1,15 @@
-import ChangeTheme from "./components/ChangeTheme";
-import {ThemeContextProvider} from "./contexts/ThemeContext";
+import Container from "./components/Container";
+import { LangContextProvider } from "./contexts/LangContext";
+import { ThemeContextProvider } from "./contexts/ThemeContext";
+import "./style.css";
 
 function App() {
     return (
-        <ThemeContextProvider>
-            <ChangeTheme />
-        </ThemeContextProvider>
+        <LangContextProvider>
+            <ThemeContextProvider>
+                <Container />
+            </ThemeContextProvider>
+        </LangContextProvider>
     );
 }
 
