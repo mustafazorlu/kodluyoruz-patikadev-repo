@@ -16,7 +16,7 @@ const ContentFooter = () => {
         <div className="footer">
             <span className="todo-count">
                 <strong>{todos.length} </strong>
-                item{todos.length > 1 && "s"} left
+                item{todos.length > 1 && "s"} left 
             </span>
             <ul className="filters">
                 <li>
