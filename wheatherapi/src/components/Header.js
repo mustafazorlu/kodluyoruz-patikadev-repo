@@ -1,9 +1,20 @@
 import React from "react";
 
-const Header = ({ setSearchState, getData, searchState }) => {
+const Header = ({ setSearchState, getData, searchState, stateData }) => {
+    
+    const splittedImgUrl = stateData?.weather?.[0].description.replaceAll(
+        " ",
+        "-"
+    );
+    console.log(splittedImgUrl);
+
     return (
         <div className="header">
-            <img src="" alt="" />
+            <img
+                src={`/assets/${splittedImgUrl}.jpg`}
+                alt=""
+                className="header_image"
+            />
             <div className="input_wrapper">
                 <input
                     type="text"
@@ -11,7 +22,10 @@ const Header = ({ setSearchState, getData, searchState }) => {
                     onChange={(e) => setSearchState(e.target.value)}
                     placeholder="Search city weather you want to know.."
                 />
-                <button className="search_btn" onClick={() => getData(searchState)}>
+                <button
+                    className="search_btn"
+                    onClick={() => getData(searchState)}
+                >
                     Search
                 </button>
             </div>
