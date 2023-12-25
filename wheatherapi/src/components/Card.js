@@ -1,9 +1,9 @@
 import { FaArrowUpLong, FaArrowDownLong, FaWind } from "react-icons/fa6";
-import { useMainWeather } from "../context/WeatherContext";
+import WeatherContext from "../context/WeatherContext";
+import { useContext } from "react";
 
 const Card = () => {
-    const { stateData: data } = useMainWeather();
-    // const data = stateData.data;
+    const { stateData: data } = useContext(WeatherContext);
     return (
         <div className="card">
             <div className="card_header">
@@ -18,10 +18,7 @@ const Card = () => {
                 {data?.weather?.map((item) => (
                     <div className="flex">
                         <img
-                            src={`https://openweathermap.org/img/wn/${item.icon.slice(
-                                0,
-                                2
-                            )}d@2x.png`}
+                            src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
                             alt=""
                             className="weather_icon"
                         />
