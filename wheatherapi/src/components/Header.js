@@ -1,13 +1,15 @@
-import React from "react";
+import { useMainWeather } from "../context/WeatherContext";
+import { useWeather } from "../hooks/useWeather";
 
-const Header = ({ setSearchState, getData, searchState, stateData }) => {
-    
+const Header = () => {
+    const { setSearch, stateData } = useMainWeather();
+
     const splittedImgUrl = stateData?.weather?.[0].description.replaceAll(
         " ",
         "-"
     );
     console.log(splittedImgUrl);
-
+    useWeather();
     return (
         <div className="header">
             <img
@@ -19,15 +21,10 @@ const Header = ({ setSearchState, getData, searchState, stateData }) => {
                 <input
                     type="text"
                     className="search_input"
-                    onChange={(e) => setSearchState(e.target.value)}
+                    onChange={(e) => setSearch(e.target.value)}
                     placeholder="Search city weather you want to know.."
                 />
-                <button
-                    className="search_btn"
-                    onClick={() => getData(searchState)}
-                >
-                    Search
-                </button>
+                <button className="search_btn">Search</button>
             </div>
         </div>
     );

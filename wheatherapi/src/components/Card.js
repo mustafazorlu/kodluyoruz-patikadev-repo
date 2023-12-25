@@ -1,9 +1,9 @@
-import React from "react";
 import { FaArrowUpLong, FaArrowDownLong, FaWind } from "react-icons/fa6";
+import { useMainWeather } from "../context/WeatherContext";
 
-const Card = ({ stateData }) => {
-    const data = stateData;
-    // console.log(data.coord.lat);
+const Card = () => {
+    const { stateData: data } = useMainWeather();
+    // const data = stateData.data;
     return (
         <div className="card">
             <div className="card_header">
